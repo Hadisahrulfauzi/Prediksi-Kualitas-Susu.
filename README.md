@@ -120,7 +120,7 @@ Buat Korelasi heatmap
 ``` bash
 sns.heatmap(data.corr(), annot=True, cmap='coolwarm')
 ```
-![](./assets/evaluasi.png) <br>
+![](./assets/heatmap.png) <br>
 
 Lalu lakukan pemisahan data menjadi variabel dependen (target) dan variabel independen (fitur) yang umum dalam pemodelan data. Dalam hal ini, y akan menjadi target atau label, dan x akan menjadi fitur atau atribut yang digunakan untuk memprediksi target,
 ``` bash
