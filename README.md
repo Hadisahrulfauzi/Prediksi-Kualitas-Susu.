@@ -197,7 +197,7 @@ Terlihat jelas bahwa model kita berhasil memprediksi nilai stroke yang sama deng
 
 ## Deployment
 
-[My Stroke Prediction App](https://prediksi-kualitas-susu.streamlit.app/).
+[My Milk Quality Prediction App](https://prediksi-kualitas-susu.streamlit.app/).
 
 ![](./assets/app.png)
 
