@@ -74,6 +74,16 @@ Setelah mengupload filenya, maka kita akan lanjut dengan membuat sebuah folder u
 !chmod 600 ~/.kaggle/kaggle.json
 !ls ~/.kaggle
 ```
+Lalu mari kita download datasetsnya,
+``` bash
+!kaggle datasets download -d cpluzshrijayan/milkquality
+```
+Selanjutnya kita harus extract file yang tadi telah didownload,
+``` bash
+!mkdir milkquality
+!unzip milkquality.zip -d milkquality
+!ls milkquality
+```
 Kita mengimport semua library yang dibutuhkan, 
 ``` bash
 import pandas as pd
@@ -120,7 +130,7 @@ Buat Korelasi heatmap
 ``` bash
 sns.heatmap(data.corr(), annot=True, cmap='coolwarm')
 ```
-![](./assets/heatmap.png) <br>
+![](./assets/evaluasi.png) <br>
 
 Lalu lakukan pemisahan data menjadi variabel dependen (target) dan variabel independen (fitur) yang umum dalam pemodelan data. Dalam hal ini, y akan menjadi target atau label, dan x akan menjadi fitur atau atribut yang digunakan untuk memprediksi target,
 ``` bash
@@ -182,11 +192,12 @@ ax.set_title('Confusion Matrix');
 ax.xaxis.set_ticklabels(['low','medium','high']); ax.yaxis.set_ticklabels
 ```
 ![](./assets/evaluasi.png) <br>
+Terlihat jelas bahwa model kita berhasil memprediksi nilai stroke yang sama dengan nilai aktualnya sebanyak 293 data.
 
 
 ## Deployment
 
-[My Milk Quality Prediction App](https://prediksi-kualitas-susu.streamlit.app/).
+[My Stroke Prediction App](https://prediksi-kualitas-susu.streamlit.app/).
 
 ![](./assets/app.png)
 
