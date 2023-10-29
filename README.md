@@ -195,7 +195,7 @@ ax.xaxis.set_ticklabels(['low','medium','high']); ax.yaxis.set_ticklabels
 
 ## Deployment
 
-[My Milk Quality Prediction App](https://prediksi-kualitas-susu.streamlit.app/).
+[My Milk Quality Prediction App](https://prediksi-kualitas-susu-byhadi.streamlit.app/).
 
 ![](./assets/app.png)
 
