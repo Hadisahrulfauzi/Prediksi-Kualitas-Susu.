@@ -182,12 +182,11 @@ ax.set_title('Confusion Matrix');
 ax.xaxis.set_ticklabels(['low','medium','high']); ax.yaxis.set_ticklabels
 ```
 ![](./assets/evaluasi.png) <br>
-Terlihat jelas bahwa model kita berhasil memprediksi nilai stroke yang sama dengan nilai aktualnya sebanyak 293 data.
 
 
 ## Deployment
 
-[My Stroke Prediction App](https://prediksi-kualitas-susu.streamlit.app/).
+[My Milk Quality Prediction App](https://prediksi-kualitas-susu.streamlit.app/).
 
 ![](./assets/app.png)
 
