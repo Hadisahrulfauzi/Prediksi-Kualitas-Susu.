@@ -40,7 +40,7 @@ Dataset ini terdiri dari 8 variabel independen yaitu pH, Suhu, Rasa, Bau, Lemak,
 
 Selanjutnya uraikanlah seluruh variabel atau fitur pada data. Sebagai contoh:  
 
-### Variabel-variabel pada Heart Failure Prediction Dataset adalah sebagai berikut:
+### Variabel-variabel pada milk quality Prediction Dataset adalah sebagai berikut:
 - **pH**            : Fitur ini menentukan pH susu, yang berada pada kisaran 3 hingga 9,5. [float64] 
 - **temperature**   : Fitur ini menentukan suhu susu, dan kisarannya adalah dari 34'C hingga 90'C.[int64] 
 - **taste**         : Fitur ini mendefinisikan rasa susu dan mengambil nilai yang mungkin: 1 (baik) atau 0 (buruk).[int64] 
