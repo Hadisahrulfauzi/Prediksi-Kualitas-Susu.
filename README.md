@@ -38,7 +38,6 @@ Dataset ini terdiri dari 8 variabel independen yaitu pH, Suhu, Rasa, Bau, Lemak,
 
 [Milk Quality Prediction] (https://www.kaggle.com/datasets/cpluzshrijayan/milkquality).
 
-Selanjutnya uraikanlah seluruh variabel atau fitur pada data. Sebagai contoh:  
 
 ### Variabel-variabel pada Milk Quality Prediction Dataset adalah sebagai berikut:
 - **pH**            : Fitur ini menentukan pH susu, yang berada pada kisaran 3 hingga 9,5. [float64] 
