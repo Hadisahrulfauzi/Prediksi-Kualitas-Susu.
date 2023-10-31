@@ -129,7 +129,7 @@ Buat Korelasi heatmap
 ``` bash
 sns.heatmap(data.corr(), annot=True, cmap='coolwarm')
 ```
-![](./assets/evaluasi.png) <br>
+![](./assets/heatmap.png) <br>
 
 Kita lihat jumlah data kualitas susu berdasarkan ph nya
 ``` bash
@@ -174,9 +174,9 @@ from sklearn import linear_model
 lr= linear_model.LogisticRegression(random_state = 42,max_iter= 100)
 ```
 
-Selanjutnya kita akan menentukan berapa persen dari datasets yang akan digunakan untuk test dan untuk train, disini kita gunakan 20% untuk test dan sisanya untuk training alias 80%,
+Selanjutnya kita akan menentukan berapa persen dari datasets yang akan digunakan untuk test dan untuk train, disini kita gunakan 80% untuk test dan sisanya untuk training alias 20%,
 ``` bash
-X_train,X_test,y_train,y_test=train_test_split(X,y,test_size=0.2,random_state=42)
+X_train,X_test,y_train,y_test=train_test_split(X,y,test_size=0.8,random_state=42)
 ```
 
 membuat, melatih, dan mengukur akurasi model menggunakan Random Forest Classifier (RFC) dalam scikit-learn,
