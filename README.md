@@ -142,7 +142,7 @@ Kita lihat jumlah data kualitas susu berdasarkan Temprature nya
 ``` bash
 sns.countplot(x=data['Temprature'],hue=data['Grade'], palette = "tab10")
 ```
-![](./assets/tempratur.jpg) <br>
+![](./assets/tempratur.png) <br>
 
 Kita lihat jumlah data kualitas susu berdasarkan Odor nya
 ``` bash
