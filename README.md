@@ -40,7 +40,7 @@ Dataset ini terdiri dari 8 variabel independen yaitu pH, Suhu, Rasa, Bau, Lemak,
 
 Selanjutnya uraikanlah seluruh variabel atau fitur pada data. Sebagai contoh:  
 
-### Variabel-variabel pada milk quality Prediction Dataset adalah sebagai berikut:
+### Variabel-variabel pada Milk Quality Prediction Dataset adalah sebagai berikut:
 - **pH**            : Fitur ini menentukan pH susu, yang berada pada kisaran 3 hingga 9,5. [float64] 
 - **temperature**   : Fitur ini menentukan suhu susu, dan kisarannya adalah dari 34'C hingga 90'C.[int64] 
 - **taste**         : Fitur ini mendefinisikan rasa susu dan mengambil nilai yang mungkin: 1 (baik) atau 0 (buruk).[int64] 
@@ -130,7 +130,37 @@ Buat Korelasi heatmap
 ``` bash
 sns.heatmap(data.corr(), annot=True, cmap='coolwarm')
 ```
-![](./assets/heatmap.png) <br>
+![](./assets/evaluasi.png) <br>
+
+Kita lihat jumlah data kualitas susu berdasarkan ph nya
+``` bash
+sns.countplot(x=data['pH'],hue=data['Grade'], palette = "tab10")
+```
+![](./assets/pH.png) <br>
+
+Kita lihat jumlah data kualitas susu berdasarkan Temprature nya
+``` bash
+sns.countplot(x=data['Temprature'],hue=data['Grade'], palette = "tab10")
+```
+![](./assets/temprature.png) <br>
+
+Kita lihat jumlah data kualitas susu berdasarkan Odor nya
+``` bash
+sns.countplot(x=data['Odor'],hue=data['Grade'], palette = "tab10")
+```
+![](./assets/odor.png) <br>
+
+Kita lihat jumlah data kualitas susu berdasarkan Turbidity nya
+``` bash
+sns.countplot(x=data['Turbidity'],hue=data['Grade'], palette = "tab10")
+```
+![](./assets/turbidity.png) <br>
+
+Kita lihat jumlah data kualitas susu berdasarkan Colour nya
+``` bash
+sns.countplot(x=data['Colour'],hue=data['Grade'], palette = "tab10")
+```
+![](./assets/colour.png) <br>
 
 Lalu lakukan pemisahan data menjadi variabel dependen (target) dan variabel independen (fitur) yang umum dalam pemodelan data. Dalam hal ini, y akan menjadi target atau label, dan x akan menjadi fitur atau atribut yang digunakan untuk memprediksi target,
 ``` bash
@@ -182,16 +212,23 @@ pickle.dump(rf,open(filename,'wb'))
 ## Evaluation
 Matrik evaluasi yang saya gunakan disini adalah confusion matrix, karena sangat cocok untuk kasus pengkategorian seperti kasus ini. Dengan membandingkan nilai aktual dengan nilai prediksi.
 ``` bash
+from sklearn.metrics import classification_report, roc_auc_score, accuracy_score, roc_curve, auc
 rf_preds = lr.fit(X_train, y_train).predict(X_test)
 cm = confusion_matrix(y_test,rf_preds)
 
-ax= plt.subplot()
-sns.heatmap(cm, annot=True, fmt='g', ax=ax);
-ax.set_xlabel('Predicted labels');ax.set_ylabel('True labels');
-ax.set_title('Confusion Matrix');
-ax.xaxis.set_ticklabels(['low','medium','high']); ax.yaxis.set_ticklabels
+print(classification_report(y_test, rf_preds))
+print('Accuracy Score: ',accuracy_score(y_test, rf_preds))
+
+plt.figure(figsize = (8, 5))
+sns.heatmap(cm, cmap = 'Reds', annot = True, fmt = 'd', linewidths = 5, cbar = False, annot_kws = {'fontsize': 15},
+            yticklabels = ['low','medium','high'], xticklabels = ['Predicted low', 'Predicted medium', 'Predicted high'])
+plt.yticks(rotation = 0)
+plt.show()
+
 ```
-![](./assets/evaluasi.png) <br>
+![](./assets/cm2.png) <br>
+
+
 
 ## Deployment
 
